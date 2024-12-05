@@ -30,7 +30,7 @@ html, body {
 }
 .menu__item {
 	display: inline-block;
-	margin-right: 5%;
+	margin-right: 0.8%;
 }
 .menu__link {
 	text-decoration: none;
@@ -46,7 +46,7 @@ html, body {
 .header__heading {
 	position: absolute;
 	top: 50%;
-	right: 1%;
+	right: 0.5%;
 	transform: translate(0, -50%);
 }
 .heading {
@@ -127,7 +127,7 @@ html, body {
 .footer__heading {
 	position: absolute;
 	top: 50%;
-	right: 1%;
+	right: 0.5%;
 	transform: translate(0, -50%);
 }
 @media (max-width: 1100px) {
