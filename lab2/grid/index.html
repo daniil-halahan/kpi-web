@@ -3,58 +3,54 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Міні-путівник дивними професіями</title>
-	<link rel="stylesheet" href="src/style.css">
+	<title>Grid</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 	<header class="header">
 		<nav class="header__menu menu">
 			<ul class="menu__list">
-				<li class="menu__item"><a class="menu__link menu__link_back" href="../">Повернутися до вибору лаби</a></li>
-				<li class="menu__item"><a class="menu__link" href="./">Головна</a></li>
-				<li class="menu__item"><a class="menu__link" href="testers.html">Тестери</a></li>
-				<li class="menu__item"><a class="menu__link" href="masters.html">Майстри</a></li>
-				<li class="menu__item"><a class="menu__link" href="travelers.html">Мандрівники</a></li>
-				<li class="menu__item"><a class="menu__link" href="researchers.html">Дослідники</a></li>
+				<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+				<li class="menu__item"><a class="menu__link" href="../flex/">Flex</a></li>
+				<li class="menu__item"><a class="menu__link menu__link_current" href="../grid/">Grid</a></li>
+				<li class="menu__item"><a class="menu__link" href="../table/">Table</a></li>
 			</ul>
 		</nav>
 		<div class="header__heading heading">
 			<h2 class="heading__inner">Незвичайні професії світу</h2>
 		</div>
 	</header>
-	<div class="container">
-		<aside class="aside container__item">
-			<div class="aside__header top-bottom-block">
-				<p class="top-bottom-block__content">Топ-3 незвичайних професії</p>
+	<aside class="aside">
+		<div class="aside__header top-bottom-block">
+			<p class="top-bottom-block__content">Топ-3 незвичайних професії</p>
+		</div>
+		<div class="aside__content">
+			<ul>
+				<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
+				<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
+				<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
+			</ul>
+		</div>
+	</aside>
+	<section class="main">
+		<main class="main__container">
+			<div class="main__content">
+				<h3>Чому це важливо?</h3>
+				<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
+				<h3>Цікавий факт:</h3>
+				<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
 			</div>
-			<div class="aside__content">
-				<ul>
-					<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
-					<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
-					<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
-				</ul>
-			</div>
-		</aside>
-		<section class="main container__item">
-			<main class="main__container">
-				<div class="main__content">
-					<h3>Чому це важливо?</h3>
-					<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
-					<h3>Цікавий факт:</h3>
-					<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
-				</div>
-			</main>
-			<div class="main__footer top-bottom-block">
-				<p class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</p>
-			</div>
-		</section>
-		<aside class="aside container__item">
-			<div class="aside__content">
-				<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
-				<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
-			</div>
-		</aside>
-	</div>
+		</main>
+		<div class="main__footer top-bottom-block">
+			<p class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</p>
+		</div>
+	</section>
+	<aside class="aside">
+		<div class="aside__content">
+			<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
+			<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
+		</div>
+	</aside>
 	<footer class="footer">
 		<p class="footer__content">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</p>
 		<div class="footer__heading heading">
