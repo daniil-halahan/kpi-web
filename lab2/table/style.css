@@ -3,6 +3,8 @@
 	padding: 0;
 	box-sizing: border-box;
 	list-style: none;
+	border-spacing: 0px;
+  border-collapse: collapse
 }
 html, body {
 	background-color: black;
@@ -19,11 +21,11 @@ html, body {
 .menu {
 }
 .menu__list {
-	/* white-space: nowrap; */
+	white-space: nowrap;
 }
 .menu__item {
-	/* display: inline-block;
-	margin-right: 5%; */
+	display: inline-block;
+	margin-right: 5%;
 }
 .menu__link {
 	text-decoration: none;
@@ -56,6 +58,7 @@ html, body {
 	background-color: #282828;
 }
 .aside__header {
+	width: 100%;
 }
 .aside__content {
 }
@@ -67,6 +70,7 @@ html, body {
 .main__content {
 }
 .main__footer {
+	width: 100%;
 }
 .top-bottom-block {
 	background-color: #240090;

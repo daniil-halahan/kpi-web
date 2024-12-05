@@ -7,57 +7,59 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header class="header">
-		<nav class="header__menu menu">
-			<ul class="menu__list">
-				<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
-				<li class="menu__item"><a class="menu__link" href="../flex/">Flex</a></li>
-				<li class="menu__item"><a class="menu__link" href="../grid/">Grid</a></li>
-				<li class="menu__item"><a class="menu__link menu__link_current" href="../table/">Table</a></li>
-			</ul>
-		</nav>
-		<div class="header__heading heading">
-			<h2 class="heading__inner">Незвичайні професії світу</h2>
-		</div>
-	</header>
-	<div class="container">
-		<aside class="aside container__item">
-			<div class="aside__header top-bottom-block">
-				<p class="top-bottom-block__content">Топ-3 незвичайних професії</p>
-			</div>
-			<div class="aside__content">
-				<ul>
-					<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
-					<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
-					<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
+	<table class="layout">
+		<thead class="header">
+			<td class="header__menu menu" colspan="8">
+				<ul class="menu__list">
+					<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+					<li class="menu__item"><a class="menu__link" href="../flex/">Flex</a></li>
+					<li class="menu__item"><a class="menu__link" href="../grid/">Grid</a></li>
+					<li class="menu__item"><a class="menu__link menu__link_current" href="../table/">Table</a></li>
 				</ul>
-			</div>
-		</aside>
-		<section class="main container__item">
-			<main class="main__container">
-				<div class="main__content">
-					<h3>Чому це важливо?</h3>
-					<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
-					<h3>Цікавий факт:</h3>
-					<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
-				</div>
-			</main>
-			<div class="main__footer top-bottom-block">
-				<p class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</p>
-			</div>
-		</section>
-		<aside class="aside container__item">
-			<div class="aside__content">
-				<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
-				<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
-			</div>
-		</aside>
-	</div>
-	<footer class="footer">
-		<p class="footer__content">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</p>
-		<div class="footer__heading heading">
-			<h2 class="heading__inner">Відкрийте незвичайне</h2>
-		</div>
-	</footer>
+			</td>
+			<td class="header__heading heading" colspan="2">
+				<h2 class="heading__inner">Незвичайні професії світу</h2>
+			</td>
+		</thead>
+		<tbody class="container">
+			<td class="aside container__item" colspan="2">
+				<table class="aside__header top-bottom-block">
+					<td class="top-bottom-block__content">Топ-3 незвичайних професії</td>
+				</table>
+				<table class="aside__content">
+					<ul>
+						<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
+						<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
+						<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
+					</ul>
+				</table>
+			</td>
+			<td class="main container__item" colspan="6">
+				<table class="main__container">
+					<td class="main__content">
+						<h3>Чому це важливо?</h3>
+						<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
+						<h3>Цікавий факт:</h3>
+						<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
+					</td>
+				</table>
+				<table class="main__footer top-bottom-block">
+					<td class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</td>
+				</table>
+			</td>
+			<td class="aside container__item" colspan="2">
+				<table class="aside__content">
+					<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
+					<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
+				</table>
+			</td>
+		</tbody>
+		<tfoot class="footer">
+			<td class="footer__content" colspan="8">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</td>
+			<td class="footer__heading heading" colspan="2">
+				<h2 class="heading__inner">Відкрийте незвичайне</h2>
+			</td>
+		</tfoot>
+	</table>
 </body>
 </html>
