@@ -60,6 +60,7 @@ html, body {
 	padding: 3px 10px;
 	font-size: 20px;
 	font-weight: bold;
+	text-align: right;
 }
 /* .body {} */
 /* .body__inner {} */
@@ -105,4 +106,9 @@ html, body {
 }
 .footer__heading {
 	padding: 0 10px;
+}
+@media (max-width: 920px) {
+	.heading__content {
+		font-size: 15px;
+	}
 }
