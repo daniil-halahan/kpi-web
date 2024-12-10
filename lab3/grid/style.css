@@ -56,6 +56,7 @@ body {
 .heading {
 	background-color: #3500D3;
 	padding: 3px 10px;
+	white-space: nowrap;
 }
 .heading__inner {
 	font-size: 20px;
@@ -129,3 +130,101 @@ body {
 		text-align: center
 	}
 }
+
+/* lab3 start */
+
+.menu_open{
+   display: grid !important;
+}
+.menu-opened {
+	overflow: hidden;
+}
+.burger {
+   display: none;
+   position: fixed;
+	top: 20px;
+	left: 20px;
+   z-index: 51;
+   align-items: center;
+   width: 30px;
+   height: 18px;
+}
+.burger span{
+   height: 2px;
+   width: 80%;
+   transform: scale(1);
+   background-color: #FAF6F2;
+}
+.burger::before, .burger::after{
+   content: '';
+   position: absolute;
+   height: 2px;
+   width: 100%;
+   background-color: #FAF6F2;
+   transition: all 0.3s ease 0s;
+}
+.burger::before { top: 0 }
+.burger::after { bottom: 0 }
+.burger.burger_active span { transform: scale(0) }
+.burger.burger_active::before{
+   top: 50%;
+   transform: rotate(45deg) translate(0, -50%);
+}
+.burger.burger_active::after{
+   bottom: 50%;
+   transform: rotate(-45deg) translate(0, 50%);
+}
+
+@media (max-width: 768px) {
+	body {
+		height: auto;
+		grid-template-areas: none;
+		grid-template-columns: auto;
+		grid-template-rows: 10vh 90vh 100vh 90vh auto;
+
+	}
+   .burger { display: grid }
+   .menu {
+      display: none;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 50;
+		overflow-y: hidden;
+      padding: 50px 40px;
+      background-color: black;
+   }
+   .menu__list{
+		grid-template-columns: auto;
+		align-items: start;
+      grid-gap: 30px;
+		height: fit-content;
+   }
+	.header {
+		grid-area: auto;
+		justify-content: end;
+	}
+	.aside:nth-of-type(1) {
+		grid-area: auto;
+	}
+	.aside:nth-of-type(2) {
+		grid-area: auto;
+	}
+	.main {
+		grid-area: auto;
+	}
+	.footer {
+		grid-area: auto;
+		padding: 10px 10px;
+		grid-template-columns: auto;
+		gap: 10px;
+		justify-items: center;
+	}
+	.footer__heading {
+		order: -1;
+		width: fit-content;
+	}
+}
+
+/* lab3 end */

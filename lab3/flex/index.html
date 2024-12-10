@@ -7,24 +7,18 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header class="header">
-		<!-- lab3 start -->
+	<!-- lab3 start -->
 		<div class="burger">
 			<span></span>
 		</div>
-		<script>
-      document.querySelector('.burger').addEventListener('click', function() {
-            this.classList.toggle('burger_active');
-            document.querySelector('.menu').classList.toggle('menu_open');
-      })
-		</script>
-		<!-- lab3 end -->
+	<!-- lab3 end -->
+	<header class="header">
 		<nav class="header__menu menu">
 			<ul class="menu__list">
 				<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
 				<li class="menu__item"><a class="menu__link menu__link_current" href="../flex/">Flex</a></li>
 				<li class="menu__item"><a class="menu__link" href="../grid/">Grid</a></li>
-				<li class="menu__item"><a class="menu__link" href="../table/">Table</a></li>
+				<li class="menu__item"><a class="menu__link" href="../email/">Email</a></li>
 			</ul>
 		</nav>
 		<div class="header__heading heading">
@@ -70,5 +64,14 @@
 			<h2 class="heading__inner">Відкрийте незвичайне</h2>
 		</div>
 	</footer>
+	<!-- lab3 start -->
+	<script>
+      document.querySelector('.burger').addEventListener('click', function() {
+            this.classList.toggle('burger_active');
+            document.querySelector('.menu').classList.toggle('menu_open');
+				document.querySelector('body').classList.toggle('menu-opened');
+      })
+	</script>
+	<!-- lab3 end -->
 </body>
 </html>

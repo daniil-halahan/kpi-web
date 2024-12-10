@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Table</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			list-style: none;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		html, body {
+			background-color: black;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+		.layout {
+			height: 100vh;
+			width: 100%;
+			table-layout: fixed;
+		}
+		.header {
+			background-color: #190061;
+			height: 60px;
+			
+		}
+		.header__menu {
+			padding: 0 10px;
+		}
+		/* .menu {} */
+		.menu__list {
+			white-space: nowrap;
+		}
+		.menu__item {
+			display: inline-block;
+			margin-right: 0.8%;
+		}
+		.menu__link {
+			text-decoration: none;
+			color: white;
+			transition: 0.5s;
+		}
+		.menu__link_back {
+			text-decoration: underline;
+		}
+		.menu__link_current {
+			color: lightblue;
+		}
+		.menu__link:hover {
+			color: grey;
+		}
+		.header__heading {
+			padding: 0 10px;
+		}
+		/* .heading {} */
+		.heading__table {
+			margin-left: auto;
+		}
+		/* .heading__inner {} */
+		.heading__content {
+			background-color: #3500D3;
+			padding: 3px 10px;
+			font-size: 20px;
+			font-weight: bold;
+			text-align: right;
+		}
+		/* .body {} */
+		/* .body__inner {} */
+		.aside {
+			background-color: #282828;
+		}
+		.aside__table {
+			height: 100%;
+			width: 100%;
+		}
+		.aside__inner {
+			text-align: center;
+		}
+		.aside__content {
+			padding: 0 5%;
+		}
+		.top-bottom-block {
+			background-color: #240090;
+			height: 60px;
+			width: 100%;
+			text-align: center;
+		}
+		/* .top-bottom-block__content {} */
+		.main {
+			background-color: #3500D3;
+		}
+		.main__table {
+			height: 100%;
+			width: 100%;
+		}
+		.main__inner {
+			text-align: center;
+		}
+		.main__content {
+			padding: 0 5%;
+		}
+		.footer {
+			background-color: #0c0032;
+			height: 60px;
+		}
+		.footer__content {
+			padding: 0 10px;
+		}
+		.footer__heading {
+			padding: 0 10px;
+		}
+		@media (max-width: 920px) {
+			.heading__content {
+				font-size: 15px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<table class="layout">
+		<thead class="header">
+			<tr class="header__inner">
+				<td class="header__menu menu" colspan="8">
+					<ul class="menu__list">
+						<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+						<li class="menu__item"><a class="menu__link" href="../flex/">Flex</a></li>
+						<li class="menu__item"><a class="menu__link" href="../grid/">Grid</a></li>
+						<li class="menu__item"><a class="menu__link menu__link_current" href="../email/">Email</a></li>
+					</ul>
+				</td>
+				<td class="header__heading heading" colspan="2">
+					<table class="heading__table">
+						<tr class="heading__inner">
+							<td class="heading__content">Незвичайні професії світу</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</thead>
+		<tbody class="body">
+			<tr class="body__inner">
+				<td class="aside" colspan="2">
+					<table class="aside__table">
+						<tr class="top-bottom-block">
+							<td class="top-bottom-block__content">Топ-3 незвичайних професії</td>
+						</tr>
+						<tr class="aside__inner">
+							<td class="aside__content">
+								<ul>
+									<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
+									<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
+									<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
+								</ul>
+							</td>
+						</tr>
+					</table>
+				</td>
+				<td class="main" colspan="6">
+					<table class="main__table">
+						<tr class="main__inner">
+							<td class="main__content">
+								<h3>Чому це важливо?</h3>
+								<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
+								<h3>Цікавий факт:</h3>
+								<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
+							</td>
+						</tr>
+						<tr class="top-bottom-block">
+							<td class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</td>
+						</tr>
+					</table>
+				</td>
+				<td class="aside" colspan="2">
+					<table class="aside__table">
+						<tr class="aside__inner">
+							<td class="aside__content">
+								<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
+								<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+		<tfoot class="footer">
+			<tr class="footer__inner">
+				<td class="footer__content" colspan="8">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</td>
+				<td class="footer__heading heading" colspan="2">
+					<table class="heading__table">
+						<tr class="heading__inner">
+							<td class="heading__content">Відкрийте незвичайне</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+
+	<!-- <table class="layout">
+
+
+				<table class="main__footer top-bottom-block">
+					<td class="top-bottom-block__content"></td>
+				</table>
+			</td>
+			<td class="aside container__item" colspan="2">
+				<table class="aside__content">
+					<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
+					<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
+				</table>
+			</td>
+		</tbody>
+		<tfoot class="footer">
+			<td class="footer__content" colspan="8">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</td>
+			<td class="footer__heading heading" colspan="2">
+				<h2 class="heading__inner">Відкрийте незвичайне</h2>
+			</td>
+		</tfoot>
+	</table> -->
+</body>
+</html>
