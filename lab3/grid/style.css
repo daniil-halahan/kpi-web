@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+}
+html, body {
+	background-color: black;
+	color: white;
+	font-family: Arial, sans-serif;
+}
+body {
+	height: 100vh;
+	display: grid;
+	grid-template-areas: 
+	"header header header"
+	"asideL main asideR"
+	"footer footer footer";
+	grid-template-columns: 2fr 6fr 2fr;
+	grid-template-rows: 60px 1fr 60px;
+}
+.header {
+	background-color: #190061;
+	padding: 0 10px;
+	grid-area: header;
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: space-between;
+	align-items: center;
+}
+/* .header__menu {} */
+/* .menu {} */
+.menu__list {
+	white-space: nowrap;
+	display: grid;
+	grid-gap: 5%;
+	grid-template-columns: repeat(4, auto);
+	align-items: center;
+}
+/* .menu__item {} */
+.menu__link {
+	text-decoration: none;
+	color: white;
+	transition: 0.5s;
+}
+.menu__link_back {
+	text-decoration: underline;
+}
+.menu__link_current {
+	color: lightblue;
+}
+.menu__link:hover {
+	color: grey;
+}
+/* .header__heading {} */
+.heading {
+	background-color: #3500D3;
+	padding: 3px 10px;
+}
+.heading__inner {
+	font-size: 20px;
+}
+.aside {
+	background-color: #282828;
+	display: grid;
+	grid-template-columns: 5fr 90fr 5fr;
+	grid-template-rows: auto 1fr;
+}
+.aside:nth-of-type(1) {
+	grid-area: asideL;
+	
+}
+.aside:nth-of-type(2) {
+	grid-area: asideR;
+}
+.aside__header {
+	grid-column: 1 / 4;
+}
+.aside__content {
+	align-self: center;
+	justify-self: center;
+	grid-column: 2;
+	grid-row: 2;
+}
+.main {
+	grid-area: main;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+.main__container {
+	background-color: #3500D3;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	grid-template-columns: 5fr 90fr 5fr;
+}
+.main__content {
+	grid-column: 2;
+}
+/* .main__footer {} */
+.top-bottom-block {
+	background-color: #240090;
+	height: 60px;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+.top-bottom-block__content {
+	text-align: center;
+}
+.footer {
+	background-color: #0c0032;
+	padding: 0 10px;
+	grid-area: footer;
+	display: grid;
+	grid-template-columns: auto auto;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer__content {
+	display: grid;
+	align-items: center;
+}
+/* .footer__heading {} */
+
+@media (max-width: 1100px) {
+	.menu__list {
+		white-space: normal;
+		text-align: center
+	}
+}
