@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data Visualization</title>
+	<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+	<div class="layout">
+		<header class="header container">
+			<div class="header__logo">
+				<a class="header__link" href="./"><img src="src/img/logo.png" alt="" class="header__img"></a>
+			</div>
+			<div class="header__burger burger">
+				<span></span>
+			</div>
+			<nav class="header__menu menu">
+				<ul class="menu__list">
+					<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+					<li class="menu__item"><a class="menu__link menu__link_current" href="./">Home</a></li>
+					<li class="menu__item"><a class="menu__link" href="./">About</a></li>
+					<li class="menu__item"><a class="menu__link" href="./">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="header__social social">
+				<ul class="social__list">
+					<li class="social__item"><a href="" class="social__link"><img src="src/img/facebook.png" alt="" class="social__img"></a></li>
+					<li class="social__item"><a href="" class="social__link"><img src="src/img/twitter.png" alt="" class="social__img"></a></li>
+					<li class="social__item"><a href="" class="social__link"><img src="src/img/instagram.png" alt="" class="social__img"></a></li>
+				</ul>
+			</div>
+		</header>
+		<main class="main container">
+			<section class="main__visual visual">
+				<div class="visual__content">
+					<div class="visual__bg"></div>
+					<h2 class="visual__header">Data Visualization</h2>
+					<img src="src/img/computer.jpg" alt="Data Visualization" class="visual__img" width="100%">
+				</div>
+			</section>
+			<section class="main__content">
+				<div class="main__list list">
+					<div class="list__item item">
+						<h3 class="item__header">01. goals</h3>
+						<p class="item__content">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+						<a href="" class="item__link">more</a>
+					</div>
+					<div class="list__item item">
+						<h3 class="item__header">02. strategy</h3>
+						<p class="item__content">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+						<a href="" class="item__link">more</a>
+					</div>
+				</div>
+			</section>
+		</main>
+	</div>
+	<script>
+      document.querySelector('.burger').addEventListener('click', function() {
+            this.classList.toggle('burger_active');
+            document.querySelector('.menu').classList.toggle('menu_open');
+				document.querySelector('body').classList.toggle('menu-opened');
+      })
+	</script>
+</body>
+</html>
