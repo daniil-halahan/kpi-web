@@ -18,7 +18,7 @@ body {
 }
 .header {
 	background-color: #190061;
-	height: 60px;
+	min-height: 60px;
 	padding: 0 10px;
 	display: flex;
 	justify-content: space-between;
@@ -99,7 +99,7 @@ body {
 /* .main__footer {} */
 .top-bottom-block {
 	background-color: #240090;
-	height: 60px;
+	min-height: 60px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -109,7 +109,7 @@ body {
 }
 .footer {
 	background-color: #0c0032;
-	height: 60px;
+	min-height: 60px;
 	padding: 0 10px;
 	display: flex;
 	justify-content: space-between;
@@ -191,7 +191,7 @@ body {
       row-gap: 30px;
    }
 	.header {
-		height: 10vh;
+		min-height: 10vh;
 		justify-content: flex-end;
 	}
 	.container {
@@ -199,14 +199,14 @@ body {
 	}
 	.aside {
 		flex: auto;
-		height: 90vh;
+		min-height: 90vh;
 	}
 	.main {
 		flex: auto;
-		height: 100vh;
+		min-height: 100vh;
 	}
 	.top-bottom-block {
-		height: 10vh;
+		min-height: 10vh;
 	}
 	.footer {
 		height: auto;
