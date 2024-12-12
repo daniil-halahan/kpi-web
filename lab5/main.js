@@ -15,13 +15,15 @@ function swapBlocksContent() {
 
 // 2. Функція обчислення площі овала
 function calculateEllipseArea(ellipse) {
-   var a = ellipse.elements['semi-major'].value
-   var b = ellipse.elements['semi-minor'].value;
-   var area = Math.PI * a * b;
-   // document.getElementById('2t-result').innerText = `Площа овала: ${area.toFixed(2)}`;
-	const resultElement = document.createElement('p');
-	resultElement.textContent = `Площа овала: ${area.toFixed(2)}`;
-	document.getElementById('3').appendChild(resultElement);
+   const a = ellipse.elements['semi-major'].value
+   const b = ellipse.elements['semi-minor'].value;
+	if (a > 0 && b > 0) {
+		const area = Math.PI * a * b;
+		// document.getElementById('2t-result').innerText = `Площа овала: ${area.toFixed(2)}`;
+		const resultElement = document.createElement('p');
+		resultElement.textContent = `Площа овала: ${area.toFixed(2)}`;
+		document.getElementById('3').appendChild(resultElement);
+	}
 }
 
 
@@ -32,7 +34,6 @@ function calculateEllipseArea(ellipse) {
 // 	));
 // 	return matches ? decodeURIComponent(matches[1]) : undefined;
 // }
-document.addEventListener('DOMContentLoaded', checkCookie);
 function checkCookie() {
 	if (document.cookie != "") {
 		if (confirm(`${document.cookie}\nВидалити ці cookies?`)) {
@@ -52,6 +53,7 @@ function checkCookie() {
 	}
 	
 }
+checkCookie();
 function countWordsAndHandleCookies(form) {
    const text = form.elements['text'].value;
    const wordCount = text.split(/\s+/).filter(Boolean).length;
@@ -61,12 +63,11 @@ function countWordsAndHandleCookies(form) {
 
 
 // 4. Вирівнювання по лівому краю та збереження в localStorage
-document.addEventListener('DOMContentLoaded', handleAlignment);
 function handleAlignment() {
 	const blocks = [
       document.querySelector('.main__content'),
-      document.querySelectorAll('.aside__content')[0],
-      document.querySelectorAll('.aside__content')[1]
+      document.querySelectorAll('.aside__content')[1],
+      document.querySelectorAll('.aside__content')[0]
    ];
    const form = document.createElement('form');
    blocks.forEach((block, index) => {
@@ -76,6 +77,7 @@ function handleAlignment() {
 		checkbox.checked = localStorage.getItem(`alignBlock${index + 3}`) === 'true';
 		label.textContent = `Вирівняти блок ${index + 3} по лівому краю`;
 		label.prepend(checkbox);
+		label.appendChild(document.createElement('br'));
 		checkbox.onchange = () => {
 			localStorage.setItem(`alignBlock${index + 3}`, checkbox.checked);
 		};
@@ -87,6 +89,7 @@ function handleAlignment() {
       alignBlocks(blocks);
    });
 }
+handleAlignment();
 function alignBlocks(blocks) {
 	blocks.forEach((block, index) => {
 		if (localStorage.getItem(`alignBlock${index + 3}`) === 'true')
@@ -98,3 +101,53 @@ function alignBlocks(blocks) {
 
 
 // 5. Редагування вмісту номерних блоків
+function handleBlockEditing() {
+   const task = document.getElementById('5-task');
+   const select = document.createElement('select');
+	const blocks = [];
+	for (let i = 1; i <= 7; i++)
+		blocks.push(document.getElementById(i));
+	const selectName = document.createElement('option');
+	selectName.textContent = 'Виберіть блок для редагування';
+	select.appendChild(selectName);
+   blocks.forEach((block, index) => {
+      const option = document.createElement('option');
+      option.value = index;
+      option.textContent = `Блок ${index + 1}`;
+      select.appendChild(option);
+   });
+   task.appendChild(select);
+   select.onchange = () => {
+      const block = blocks[select.value];
+      const textarea = document.createElement('textarea');
+      const saveButton = document.createElement('button');
+      textarea.value = block.innerHTML;
+      saveButton.textContent = 'Зберегти';
+		block.append(textarea, document.createElement('br'), saveButton);
+      saveButton.onclick = () => {
+         block.innerHTML = textarea.value;
+         localStorage.setItem(`blockContent${select.value}`, textarea.value);
+         block.style.fontStyle = 'italic';
+			createDeleteBtn(block);
+      };
+   };
+   blocks.forEach((block, index) => {
+      const savedContent = localStorage.getItem(`blockContent${index}`);
+      if (savedContent) {
+         block.innerHTML = savedContent;
+         block.style.fontStyle = 'italic';
+			createDeleteBtn(block, select.value);
+      } else {
+      }
+   });
+}
+handleBlockEditing();
+function createDeleteBtn(block, selectValue) {
+	const deleteButton = document.createElement('button');
+	deleteButton.textContent = 'Видалити';
+	block.append(document.createElement('br'), deleteButton);
+	deleteButton.onclick = () => {
+		localStorage.removeItem(`blockContent${selectValue}`);
+		
+	};
+}

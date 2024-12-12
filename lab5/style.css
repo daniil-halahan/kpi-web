@@ -220,4 +220,5 @@ body {
 
 .tasks {
 	list-style-position: inside;
+	padding: 15px;
 }
