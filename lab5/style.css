@@ -94,6 +94,7 @@ body {
 }
 .main__content {
 	width: 90%;
+	text-align: center;
 }
 /* .main__footer {} */
 .top-bottom-block {
@@ -215,4 +216,8 @@ body {
 	.footer__heading {
 		margin-bottom: 10px;
 	}
+}
+
+.tasks {
+	list-style-position: inside;
 }

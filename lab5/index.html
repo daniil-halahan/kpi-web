@@ -38,9 +38,9 @@
 		</aside>
 		<section class="main">
 			<main class="main__container">
-				<ol>
-					<li><button onclick="swapBlocksContent()">Заміна контенту блоків "4" і "5"</button></li>
-					<li>
+				<ol class="tasks">
+					<li id="1-task"><button onclick="swapBlocksContent()">Заміна контенту блоків "4" і "5"</button></li>
+					<li id="2-task">
 						<form onsubmit="calculateEllipseArea(this); return false;" method="post">
 							<input type="number" step="0.01" name="semi-major" placeholder="Велика піввісь">
 							<input type="number" step="0.01" name="semi-minor" placeholder="Мала піввісь">
@@ -49,8 +49,8 @@
 						<!-- <span id="2t-result"></span> -->
 					</li>
 					<li id="3-task"></li>
-					<li></li>
-					<li></li>
+					<li id="4-task"></li>
+					<li id="5-task"></li>
 				</ol>
 				<div class="main__content" id="3">
 					<h3>Чому це важливо?</h3>

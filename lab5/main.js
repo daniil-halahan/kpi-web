@@ -60,5 +60,41 @@ function countWordsAndHandleCookies(form) {
 };
 
 
-// 
+// 4. Вирівнювання по лівому краю та збереження в localStorage
+document.addEventListener('DOMContentLoaded', handleAlignment);
+function handleAlignment() {
+	const blocks = [
+      document.querySelector('.main__content'),
+      document.querySelectorAll('.aside__content')[0],
+      document.querySelectorAll('.aside__content')[1]
+   ];
+   const form = document.createElement('form');
+   blocks.forEach((block, index) => {
+		const label = document.createElement('label');
+		const checkbox = document.createElement('input');
+		checkbox.type = 'checkbox';
+		checkbox.checked = localStorage.getItem(`alignBlock${index + 3}`) === 'true';
+		label.textContent = `Вирівняти блок ${index + 3} по лівому краю`;
+		label.prepend(checkbox);
+		checkbox.onchange = () => {
+			localStorage.setItem(`alignBlock${index + 3}`, checkbox.checked);
+		};
+		form.appendChild(label);
+   });
+   document.getElementById('4-task').appendChild(form);
+	alignBlocks(blocks);
+   document.addEventListener('dblclick', () => {
+      alignBlocks(blocks);
+   });
+}
+function alignBlocks(blocks) {
+	blocks.forEach((block, index) => {
+		if (localStorage.getItem(`alignBlock${index + 3}`) === 'true')
+			block.style.textAlign = 'left';
+		else
+			block.style.textAlign = 'center';
+	});
+}
 
+
+// 5. Редагування вмісту номерних блоків
