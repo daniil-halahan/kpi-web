@@ -99,7 +99,6 @@ function alignBlocks(blocks) {
 	});
 }
 
-
 // 5. Редагування вмісту номерних блоків
 function handleBlockEditing() {
    const task = document.getElementById('5-task');
@@ -107,18 +106,20 @@ function handleBlockEditing() {
 	const blocks = [];
 	for (let i = 1; i <= 7; i++)
 		blocks.push(document.getElementById(i));
-	const selectName = document.createElement('option');
-	selectName.textContent = 'Виберіть блок для редагування';
-	select.appendChild(selectName);
    blocks.forEach((block, index) => {
       const option = document.createElement('option');
-      option.value = index;
+      // option.value = index;
       option.textContent = `Блок ${index + 1}`;
       select.appendChild(option);
    });
+	const selectName = document.createElement('option');
+	selectName.textContent = 'Виберіть блок для редагування';
+	select.prepend(selectName);
    task.appendChild(select);
+	select.selectedIndex = 0;
+
    select.onchange = () => {
-      const block = blocks[select.value];
+      const block = blocks[select.selectedIndex - 1];
       const textarea = document.createElement('textarea');
       const saveButton = document.createElement('button');
       textarea.value = block.innerHTML;
@@ -126,28 +127,28 @@ function handleBlockEditing() {
 		block.append(textarea, document.createElement('br'), saveButton);
       saveButton.onclick = () => {
          block.innerHTML = textarea.value;
-         localStorage.setItem(`blockContent${select.value}`, textarea.value);
+         localStorage.setItem(`blockContent${select.selectedIndex}`, textarea.value);
          block.style.fontStyle = 'italic';
 			createDeleteBtn(block);
       };
    };
    blocks.forEach((block, index) => {
-      const savedContent = localStorage.getItem(`blockContent${index}`);
+      const savedContent = localStorage.getItem(`blockContent${index + 1}`);
       if (savedContent) {
          block.innerHTML = savedContent;
          block.style.fontStyle = 'italic';
-			createDeleteBtn(block, select.value);
-      } else {
+			createDeleteBtn(block);
       }
    });
 }
 handleBlockEditing();
-function createDeleteBtn(block, selectValue) {
+function createDeleteBtn(block) {
 	const deleteButton = document.createElement('button');
 	deleteButton.textContent = 'Видалити';
 	block.append(document.createElement('br'), deleteButton);
 	deleteButton.onclick = () => {
-		localStorage.removeItem(`blockContent${selectValue}`);
-		
+		// alert(`${localStorage.getItem(`blockContent${block.id}`)}`);
+		localStorage.removeItem(`blockContent${block.id}`);
+		deleteButton.remove();
 	};
 }
