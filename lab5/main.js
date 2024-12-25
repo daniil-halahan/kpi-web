@@ -108,46 +108,57 @@ function handleBlockEditing() {
 		blocks.push(document.getElementById(i));
    blocks.forEach((block, index) => {
       const option = document.createElement('option');
-      // option.value = index;
       option.textContent = `Блок ${index + 1}`;
       select.appendChild(option);
    });
 	const selectName = document.createElement('option');
 	selectName.textContent = 'Виберіть блок для редагування';
+	selectName.value = 'false';
 	select.prepend(selectName);
    task.appendChild(select);
 	select.selectedIndex = 0;
 
    select.onchange = () => {
-      const block = blocks[select.selectedIndex - 1];
-      const textarea = document.createElement('textarea');
-      const saveButton = document.createElement('button');
-      textarea.value = block.innerHTML;
-      saveButton.textContent = 'Зберегти';
-		block.append(textarea, document.createElement('br'), saveButton);
-      saveButton.onclick = () => {
-         block.innerHTML = textarea.value;
-         localStorage.setItem(`blockContent${select.selectedIndex}`, textarea.value);
-         block.style.fontStyle = 'italic';
-			createDeleteBtn(block);
-      };
+		if (select.value != 'false') {
+			select.options[select.selectedIndex].value = 'false';
+			const block = blocks[select.selectedIndex - 1];
+			const textarea = document.createElement('textarea');
+			const saveButton = document.createElement('button');
+			textarea.value = block.innerHTML;
+			saveButton.textContent = 'Зберегти';
+			block.append(document.createElement('br'), textarea, document.createElement('br'), saveButton);
+			saveButton.onclick = () => {
+				const text = textarea.value;
+				textarea.remove();
+				saveButton.remove();
+				localStorage.setItem(`blockContentPrev${select.selectedIndex}`, block.innerHTML);
+				block.innerHTML = text;
+				localStorage.setItem(`blockContent${select.selectedIndex}`, text);
+				block.style.fontStyle = 'italic';
+				createDeleteBtn(block, select);
+			};
+		}
    };
    blocks.forEach((block, index) => {
       const savedContent = localStorage.getItem(`blockContent${index + 1}`);
       if (savedContent) {
+			select.options[index + 1].value = 'false';
          block.innerHTML = savedContent;
          block.style.fontStyle = 'italic';
-			createDeleteBtn(block);
+			createDeleteBtn(block, select);
       }
    });
 }
 handleBlockEditing();
-function createDeleteBtn(block) {
+function createDeleteBtn(block, select) {
 	const deleteButton = document.createElement('button');
 	deleteButton.textContent = 'Видалити';
 	block.append(document.createElement('br'), deleteButton);
 	deleteButton.onclick = () => {
-		// alert(`${localStorage.getItem(`blockContent${block.id}`)}`);
+		select.options[parseInt(block.id)].value = '';
+		block.style.fontStyle = 'normal';
+		block.innerHTML = localStorage.getItem(`blockContentPrev${block.id}`);
+		localStorage.removeItem(`blockContentPrev${block.id}`);
 		localStorage.removeItem(`blockContent${block.id}`);
 		deleteButton.remove();
 	};
