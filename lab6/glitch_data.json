@@ -16,5 +16,11 @@
         "color": "#000000",
         "fontSize": "24",
         "duration": "750"
+    },
+    {
+        "text": "\u0430\u0430\u0430\u0430\u0430",
+        "color": "#ff0000",
+        "fontSize": "24",
+        "duration": "750"
     }
 ]
