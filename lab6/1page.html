@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1 сторінка</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="glitch.css">
+</head>
+<body>
+	<div class="burger">
+		<span></span>
+	</div>
+	<header class="header">
+		<nav class="header__menu menu">
+			<ul class="menu__list">
+				<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+				<li class="menu__item"><a class="menu__link menu__link_current" href="./1page.html">1 сторінка</a></li>
+				<li class="menu__item"><a class="menu__link" href="./2page.html" target="_blank">2 сторінка</a></li>
+			</ul>
+		</nav>
+		<div class="header__heading heading">
+			<h2 class="heading__inner">Незвичайні професії світу</h2>
+		</div>
+	</header>
+	<div class="container">
+		<aside class="aside">
+			<div class="aside__header top-bottom-block">
+				<p class="top-bottom-block__content">Топ-3 незвичайних професії</p>
+			</div>
+			<div class="aside__content">
+				<ul>
+					<li><b>Тестер водних гірок</b> — перевіряє безпеку і веселощі на атракціонах.</li>
+					<li><b>Дегустатор кормів для тварин</b> — оцінює смак і якість корму.</li>
+					<li><b>Стиліст манекенів</b> — підбирає одяг для вітринних моделей.</li>
+				</ul>
+			</div>
+		</aside>
+		<section class="main">
+			<main class="main__container">
+				<div class="form-container">
+					<h2>Create Glitch Text</h2>
+					<form id="glitchForm">
+							<div class="form-group">
+								<label for="text">Text:</label>
+								<input type="text" id="text" name="text" placeholder="Enter text" required>
+							</div>
+							<div class="form-group">
+								<label for="color">Text Color:</label>
+								<input type="color" id="color" name="color" value="#000000">
+							</div>
+							<div class="form-group">
+								<label for="fontSize">Font Size (px):</label>
+								<input type="number" id="fontSize" name="fontSize" min="12" max="64" value="24">
+							</div>
+							<div class="form-group">
+								<label for="duration">Animation Duration (ms):</label>
+								<input type="number" id="duration" name="duration" min="100" max="10000" value="750">
+							</div>
+							<div class="form-group">
+								<button type="button" id="previewBtn">Preview</button>
+								<button type="button" id="save">Save</button>
+							</div>
+					</form>
+					<div class="preview" id="preview"></div>
+				</div>
+				<div class="main__content">
+					<h3>Чому це важливо?</h3>
+					<p>Рідкісні професії допомагають вирішувати унікальні завдання. Вони дивують і надихають, нагадуючи, що кожен може знайти своє покликання, навіть якщо його мрія здається незвичною.</p>
+					<h3>Цікавий факт:</h3>
+					<p>Автор побажань у печиві з передбаченнями — справжня професія! Ці люди придумують короткі надихаючі фрази, які потрапляють у мільйони печив по всьому світу.</p>
+				</div>
+			</main>
+			<div class="main__footer top-bottom-block">
+				<p class="top-bottom-block__content">Зазирніть до нашого каталогу професій, щоб дізнатися більше!</p>
+			</div>
+		</section>
+		<aside class="aside">
+			<div class="aside__content">
+				<p>Художники по латте створюють шедеври на поверхні кави. Кожен малюнок унікальний і дарує радість клієнту.</p>
+				<p>Детективи запахів вирішують одну з найцікавіших задач — шукають неприємні запахи у речах та продуктах.</p>
+			</div>
+		</aside>
+	</div>
+	<footer class="footer">
+		<p class="footer__content">Зв’яжіться з нами, щоб дізнатися більше про рідкісні професії або запропонувати свою історію!</p>
+		<div class="footer__heading heading">
+			<h2 class="heading__inner">Відкрийте незвичайне</h2>
+		</div>
+	</footer>
+	<script>
+		document.querySelector('.burger').addEventListener('click', function() {
+				this.classList.toggle('burger_active');
+				document.querySelector('.menu').classList.toggle('menu_open');
+				document.querySelector('body').classList.toggle('menu-opened');
+		})
+	</script>
+	<script src="create_glitch.js"></script>
+	<script>
+		document.getElementById('previewBtn').addEventListener('click', function () {
+			const item = {
+				text: document.getElementById('text').value,
+				color: document.getElementById('color').value,
+				fontSize: document.getElementById('fontSize').value,
+				duration: document.getElementById('duration').value
+			};
+			const preview = document.getElementById('preview');
+			preview.innerHTML = '';
+			preview.appendChild(createGlitch(item));
+		});
+		document.getElementById('save').addEventListener('click', async function () {
+			const formData = {
+				text: document.getElementById('text').value,
+				color: document.getElementById('color').value,
+				fontSize: document.getElementById('fontSize').value,
+				duration: document.getElementById('duration').value
+			};
+			if(!formData.text) {
+				return;
+			}
+			const response = await fetch('save_glitch.php', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify(formData)
+			});
+			if (response.ok) {
+				alert('Object saved successfully!');
+			} else {
+				alert('Failed to save object.');
+			}
+		});
+	</script>
+</body>
+</html>
