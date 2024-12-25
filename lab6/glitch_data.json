@@ -16,5 +16,17 @@
         "color": "#000000",
         "fontSize": "24",
         "duration": "750"
+    },
+    {
+        "text": "yyyy",
+        "color": "#000000",
+        "fontSize": "24",
+        "duration": "750"
+    },
+    {
+        "text": "\u043f\u043f\u043f\u043f\u043f",
+        "color": "#000000",
+        "fontSize": "24",
+        "duration": "750"
     }
 ]
