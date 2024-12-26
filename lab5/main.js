@@ -12,8 +12,7 @@ function swapBlocksContent() {
    [block4.textContent, block5.textContent] = [block5.textContent, block4.textContent];
 }
 
-
-// 2. Функція обчислення площі овала
+// 2. Обчислення площі овала
 function calculateEllipseArea(ellipse) {
    const a = ellipse.elements['semi-major'].value
    const b = ellipse.elements['semi-minor'].value;
@@ -25,7 +24,6 @@ function calculateEllipseArea(ellipse) {
 		document.getElementById('3').appendChild(resultElement);
 	}
 }
-
 
 // 3. Підрахунок кількості слів у тексті та робота з cookies
 // function getCookie(name) {
