@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Anim</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="burger">
+		<span></span>
+	</div>
+	<header class="header">
+		<nav class="header__menu menu">
+			<ul class="menu__list">
+				<li class="menu__item"><a class="menu__link menu__link_back" href="../../">Повернутися до вибору лаби</a></li>
+				<li class="menu__item"><a class="menu__link menu__link_current" href="./">Anim</a></li>
+			</ul>
+		</nav>
+		<div class="header__heading heading">
+			<h2 class="heading__inner">Animation</h2>
+		</div>
+	</header>
+	<div class="container">
+		<aside class="aside">
+			<div class="aside__header top-bottom-block">
+				<p class="top-bottom-block__content">2</p>
+			</div>
+			<div class="aside__content">
+				5
+			</div>
+		</aside>
+		<section class="main">
+			<main class="main__container">
+				3
+				<div class="work">
+					<div class="controls">
+						<p class="info"></p>
+						<div class="buttons">
+							<button type="button" id="close" class="button">close</button>
+							<button type="button" id="start" class="button">start</button>
+							<button type="button" id="reload" class="button" disabled="true">reload</button>
+						</div>
+					</div>
+					<div class="anim">
+					</div>
+				</div>
+			</main>
+			<div class="main__footer top-bottom-block">
+				<p class="top-bottom-block__content"><button type="button" id="play" class="button">play</button></p>
+			</div>
+		</section>
+		<aside class="aside">
+			<div class="aside__content">
+				4
+			</div>
+		</aside>
+	</div>
+	<footer class="footer">
+		<p class="footer__content">7</p>
+		<div class="footer__heading heading">
+			<h2 class="heading__inner">Animation</h2>
+		</div>
+	</footer>
+	<script>
+      document.querySelector('.burger').addEventListener('click', function() {
+			this.classList.toggle('burger_active');
+			document.querySelector('.menu').classList.toggle('menu_open');
+			document.querySelector('body').classList.toggle('menu-opened');
+      })
+	</script>
+	<script src="main.js"></script>
+</body>
+</html>

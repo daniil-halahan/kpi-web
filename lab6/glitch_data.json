@@ -22,5 +22,11 @@
         "color": "#ff0000",
         "fontSize": "24",
         "duration": "750"
+    },
+    {
+        "text": "fffff",
+        "color": "#000000",
+        "fontSize": "24",
+        "duration": "750"
     }
 ]
